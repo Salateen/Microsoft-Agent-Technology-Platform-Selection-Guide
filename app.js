@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "icon": "⚡",
             "options": [
                 {
-                    "text": "Yes, Power Platform integration is important",
+                    "text": "Yes, Power Platform integration is important i.e. Flows or Connectors",
                     "value": "yes-power",
                     "next": "custom-llm-medium"
                 },

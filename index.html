@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Selection Guide - M365 Agent Platforms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Header Section -->
+        <header class="slide-header">
+            <h1 class="slide-title">When to Build an Agent: Platform Selection Guide</h1>
+            <h2 class="slide-subtitle">M365 Copilot Chat Agent Builder vs Copilot Studio vs Azure AI Foundry</h2>
+        </header>
+
+        <!-- Enhanced Decision Framework Section -->
+        <section class="decision-section">
+            <h3 class="decision-title">Interactive Decision Framework</h3>
+            <div class="decision-framework">
+                <!-- Start Screen -->
+                <div class="decision-start" id="decision-start">
+                    <div class="start-content">
+                        <div class="start-icon">🎯</div>
+                        <h4>Find Your Perfect Platform</h4>
+                        <p>Answer a few targeted questions to get a personalized recommendation based on your technical requirements and deployment needs.</p>
+                        <button class="btn btn--primary btn--lg" id="begin-assessment">Begin Assessment</button>
+                    </div>
+                </div>
+
+                <!-- Question Interface -->
+                <div class="decision-question-interface hidden" id="question-interface">
+                    <div class="progress-indicator">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text" id="progress-text">Step 1 of 5</span>
+                    </div>
+                    
+                    <div class="breadcrumb" id="breadcrumb"></div>
+                    
+                    <div class="question-card">
+                        <div class="question-icon" id="question-icon">💻</div>
+                        <h4 class="question-text" id="question-text"></h4>
+                        <div class="question-options" id="question-options"></div>
+                    </div>
+                    
+                    <div class="navigation-controls">
+                        <button class="btn btn--outline" id="reset-btn">Reset Assessment</button>
+                    </div>
+                </div>
+
+                <!-- Recommendation Result -->
+                <div class="decision-result hidden" id="decision-result">
+                    <div class="result-header">
+                        <div class="result-icon" id="result-icon">🎉</div>
+                        <h4>Your Recommended Platform</h4>
+                    </div>
+                    
+                    <div class="recommendation-card" id="recommendation-card">
+                        <div class="rec-platform-name" id="rec-platform-name"></div>
+                        <div class="rec-confidence" id="rec-confidence"></div>
+                        
+                        <div class="rec-section">
+                            <h5>Why this recommendation?</h5>
+                            <ul class="rec-reasons" id="rec-reasons"></ul>
+                        </div>
+                        
+                        <div class="rec-section">
+                            <h5>Important considerations</h5>
+                            <ul class="rec-considerations" id="rec-considerations"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="btn btn--primary" id="highlight-platform">Highlight Platform Above</button>
+                        <button class="btn btn--outline" id="show-alternatives">Show Alternatives</button>
+                        <button class="btn btn--secondary" id="start-over">Start Over</button>
+                    </div>
+                    
+                    <div class="alternatives-section hidden" id="alternatives-section">
+                        <h5>Alternative Platforms to Consider</h5>
+                        <div class="alternatives-list" id="alternatives-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Cards Grid -->
+        <main class="platforms-section">
+            <div class="platforms-grid">
+                <!-- Copilot Chat Agent Builder Card -->
+                <div class="platform-card" data-platform="chat-builder">
+                    <div class="card-header">
+                        <div class="card-icon">💬</div>
+                        <div class="card-title-section">
+                            <h3 class="card-title">Copilot Chat Agent Builder</h3>
+                            <p class="card-subtitle">Quick & Personal</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail-item">
+                            <span class="detail-label">Difficulty:</span>
+                            <span class="detail-value">Very Low (No coding)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Persona:</span>
+                            <span class="detail-value">End users, Business analysts</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Best for:</span>
+                            <span class="detail-value">Personal productivity, Quick Q&A</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Knowledge:</span>
+                            <span class="detail-value">Up to 4 websites, 20 SharePoint sites</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Custom LLM:</span>
+                            <span class="detail-value">No</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Sharing:</span>
+                            <span class="detail-value">Link sharing with M365 users</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copilot Studio Card -->
+                <div class="platform-card" data-platform="studio">
+                    <div class="card-header">
+                        <div class="card-icon">🔧</div>
+                        <div class="card-title-section">
+                            <h3 class="card-title">Copilot Studio</h3>
+                            <p class="card-subtitle">Balanced & Scalable</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail-item">
+                            <span class="detail-label">Difficulty:</span>
+                            <span class="detail-value">Low-Medium (Drag & drop)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Persona:</span>
+                            <span class="detail-value">Business users, Citizen developers</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Best for:</span>
+                            <span class="detail-value">Department solutions, Customer service</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Knowledge:</span>
+                            <span class="detail-value">1000+ connectors, SharePoint, websites</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Custom LLM:</span>
+                            <span class="detail-value">Limited (via connectors)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Sharing:</span>
+                            <span class="detail-value">Teams, web, mobile apps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Azure AI Foundry Card -->
+                <div class="platform-card" data-platform="foundry">
+                    <div class="card-header">
+                        <div class="card-icon">⚙️</div>
+                        <div class="card-title-section">
+                            <h3 class="card-title">Azure AI Foundry</h3>
+                            <p class="card-subtitle">Enterprise & Advanced</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail-item">
+                            <span class="detail-label">Difficulty:</span>
+                            <span class="detail-value">High (Coding required)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Persona:</span>
+                            <span class="detail-value">Developers, Data scientists</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Best for:</span>
+                            <span class="detail-value">Mission-critical systems, Complex workflows</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Knowledge:</span>
+                            <span class="detail-value">Any data source, Enterprise databases</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Custom LLM:</span>
+                            <span class="detail-value">Yes (1800+ models)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Sharing:</span>
+                            <span class="detail-value">Enterprise endpoints, containers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="slide-footer">
+            <div class="cost-summary">
+                <strong>Cost Overview:</strong> Chat Builder: Included with M365 | Studio: $200/month | Foundry: Consumption-based
+            </div>
+            <div class="footer-note">
+                Platforms can be combined for comprehensive AI strategy
+            </div>
+            <button class="btn btn--outline print-btn" onclick="window.print()">Print View</button>
+        </footer>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

@@ -19,7 +19,8 @@ An interactive decision framework to help you select the optimal Microsoft agent
 
 ### 1. **Clone or Download**
 
-git clone https://github.com/salateen/agent-platform-selection-guide.git
+git clone https://github.com/Salateen/Microsoft-Agent-Technology-Platform-Selection-Guide.git
+
 
 Or download this repo as a ZIP and extract to your local folder.
 
